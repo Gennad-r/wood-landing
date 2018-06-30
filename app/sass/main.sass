@@ -1,0 +1,485 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "icons"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+html, body
+	width: 100%
+	height: 100%
+	font-size: 22px
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $accent
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+.container-wood
+	min-height: 100%
+	display: flex
+	flex-direction: column
+	align-items: stretch
+main
+	flex-grow: 1
+header, main, footer
+	flex-shrink: 0
+button:focus
+	outline: none
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+a
+	color: $accent
+	&:hover
+		color: $hover
+		text-decoration: none
+
+h1
+	font-size: 1.7rem
+h2
+	font-size: 1.5rem
+h4
+	font-size: 1.1rem
+	
+
+p, li
+	font-size: 0.8rem
+	margin-bottom: calc(0.8rem * 1.65 / 2)
+a.btn-wide
+	display: block
+	color: #fff
+	font-size: 0.8rem
+	text-align: center
+	padding: 0.5rem
+	transition: background-color 0.5s
+	&.green
+		background-color: $hover
+		&:hover
+			background-color: darken($hover, 10%)
+	&.brown
+		background-color: lighten($accent, 10%)
+		&:hover
+			background-color: $accent
+
+.form-holder
+	margin-bottom: calc(0.8rem * 1.65 / 2)
+	input, textarea
+		width: 100%
+		border: 1px solid $accent
+		font-size: 0.8rem
+		padding: 0.45rem 0.6rem
+	textarea
+		resize: none
+
+.logo-holder
+	width: 225px
+
+
+.top-menu a
+	transition: color 0.3s
+
+
+
+.load-intro
+	transition: opacity 2s
+	opacity: 1
+	position: fixed
+	top: -100vw
+	bottom: 0
+	z-index: 111111
+	width: 100vw
+	display: flex
+	height: 100vh
+	background-color: #fff
+	background-image: url('../img/intro-bg.jpg')
+	background-size: cover
+	background-position: center center
+	justify-content: center
+	align-items: center
+	.sign-holder
+		width: 60%
+.no-bg
+	background: none	
+
+button.btn, a.btn
+	border: 1px solid $accent
+	color: $accent
+	padding: .7rem .3rem
+	background-color: transparent
+	border-radius: 0
+	&:focus
+		outline: none
+		box-shadow: none
+	
+header
+	.navigation
+		li
+			position: relative
+			font-size: 18px
+			&:not(:last-child):after
+				content: ""
+				position: absolute
+				display: block
+				width: 1px
+				height: 100%
+				background-color: $accent
+				top: 0
+				right: -1px
+			&:first-child
+				a
+					padding-left: 0
+
+			&:last-child
+				a
+					padding-right: 0
+			a
+				display: block
+				padding: 0 10px
+	.mobile
+		.navigation
+			margin-bottom: 1rem
+			li:after
+				display: none
+			li
+				a
+					padding: 10px 0
+
+.navigation
+	list-style-type: none
+	padding: 0
+	margin-bottom: 0
+	li
+		&.active a
+			color: $hover
+.social
+	ul
+		padding: 0
+		list-style-type: none
+		margin: 0
+	li:not(:first-child)
+		margin: 0
+		margin-left: 5px
+		display: inline-block
+
+
+//mobile menu layout changes
+.mobile
+	.social a
+		font-size: 3rem
+article
+	padding-top: 60px
+	margin-bottom: 100px
+	.header-container
+		margin-top: -60px
+		background-color: $accent
+	h1
+		color: #fff
+	.article-content
+		background-color: #fff
+	.bg-holder
+		position: relative
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
+		border-top: 1px solid $accent
+		border-bottom: 1px solid $accent
+		&:before
+			content: ''
+			position: absolute
+			top: 0px
+			bottom: 0px
+			left: 0px
+			right: 0px
+			border-top: 3px solid #fff
+			border-bottom: 3px solid #fff
+	.img-holder
+		width: 85%
+	.leaf-parent
+		position: relative
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			width: 112px
+			height: 112px
+			background-repeat: no-repeat
+			background-size: cover
+			bottom: -60px
+	&:last-child
+		margin-bottom: 30px
+	
+.welcome-section
+	.bg-holder
+		background-image: url('../img/welcome-bg.jpg')
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_01.png')
+			right: 0
+
+.collections-section
+	.bg-holder
+		background-image: url('../img/collections-bg.jpg')
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_3.png')
+			//right: auto
+			left: 0
+			bottom: -45px
+			transform: rotate(-45deg)
+	
+.collection
+	color: #fff
+	.collection-name
+		font-size: 50px
+		line-height: 1.1
+	a.btn
+		color: #fff
+		font-size: 1.2rem
+		border: 2px solid #fff
+		&:hover
+			background-color: rgba(#fff, 0.8)
+			color: $accent
+	p
+		width: 350px
+		line-height: 1.2
+	.collection-card
+		width: 350px
+		height: 350px
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+		border: 7px solid #fff
+		text-align: center
+		padding: 1.5rem
+		&-elegance
+			background-image: url('../img/elegant-collection-main.jpg')
+		&-3d
+			background-image: url('../img/3d-collection-main.jpg')
+.type-of-wood
+	.bg-holder
+		background-image: url('../img/type-wood-bg.jpg')
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_02.png')
+			right: 0
+	span.wood-type-plates
+		display: flex
+		text-align: center
+		background-position: center center
+		background-size: cover
+		background-repeat: no-repeat
+		color: #fff
+		min-height: 70px
+		margin: 15px 0
+		align-items: center
+		justify-content: center
+		line-height: 1
+		font-size: 0.7rem	
+		i
+			font-weight: normal
+			font-style: normal
+			text-shadow: 0 0 3px #000
+		&-ice
+			background-image: url('../img/wood-types/type-ice.jpg')
+		&-oak
+			background-image: url('../img/wood-types/type-oak.jpg')
+		&-oak-amber
+			background-image: url('../img/wood-types/type-oak-amber.jpg')
+		&-oak-cognac
+			background-image: url('../img/wood-types/type-oak-cognac.jpg')
+		&-oak-ebon
+			background-image: url('../img/wood-types/type-oak-ebon.jpg')
+		&-oak-white
+			background-image: url('../img/wood-types/type-oak-white.jpg')
+		&-oak-old-wood
+			background-image: url('../img/wood-types/type-oak-old-wood.jpg')
+		&-ash-emotion
+			background-image: url('../img/wood-types/type-ash-emotion.jpg')
+		&-ash-select
+			background-image: url('../img/wood-types/type-ash-select.jpg')
+		&-aide-giovane
+			background-image: url('../img/wood-types/type-aide-giovane.jpg')
+		&-nut
+			background-image: url('../img/wood-types/type-nut.jpg')
+		&-maple
+			background-image: url('../img/wood-types/type-maple.jpg')
+		&-oak-thermo
+			background-image: url('../img/wood-types/type-oak-thermo.jpg')
+		&-ash-thermo
+			background-image: url('../img/wood-types/type-ash-thermo.jpg')
+		&-wenge
+			background-image: url('../img/wood-types/type-wenge.jpg')
+		&-merbau
+			background-image: url('../img/wood-types/type-merbau.jpg')
+		&-teak
+			background-image: url('../img/wood-types/type-teak.jpg')
+		&-all
+			background-color: #fff
+			border: 1px solid $accent
+			color: $accent
+			i
+				text-shadow: none
+				font-weight: bold
+
+
+.gallery-section
+	overflow: hidden
+	padding-bottom: 50px
+	margin-bottom: 50px
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_01.png')
+			z-index: 3
+			//right: auto
+			left: 0
+			bottom: -55px
+			transform: rotate(-25deg)
+
+
+.about-product
+	.bg-holder
+		background-image: url('../img/about-product-bg.jpg')
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_3.png')
+			right: 0
+			bottom: -45px
+			transform: rotate(-45deg)
+	span
+		font-size: 3rem
+		display: inline-block
+
+.about-company
+	.bg-holder
+		background-image: url('../img/about-company-bg.jpg')
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_02.png')
+			//right: auto
+			left: 0
+			bottom: -60px
+			transform: rotate(65deg)
+
+.worldwide
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_01.png')
+			right: 0
+			//left: 0
+			bottom: -60px
+			transform: rotate(65deg) scale(0.8)
+	.map-holder
+		margin-bottom: -150px
+	.countries
+		p
+			margin: 0
+		.country
+			vertical-align: -5%
+			display: inline-block
+			width: 0.8rem
+			height: 0.8rem
+			background-color: #ccc
+			border-radius: 50%
+			&-europe
+				background-color: #01AEEF
+			&-usa
+				background-color: #004A80
+			&-canada
+				background-color: #ED1C24
+			&-midle-east
+				background-color: #FFC12C
+			&-russia
+				background-color: #8DC63F
+
+
+.special-offer
+	.bg-holder
+		background-image: url('../img/special-offer-bg.jpg')
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_3.png')
+			//right: auto
+			left: 0
+			bottom: -60px
+			transform: rotate(-9deg)
+	ul
+		padding-left: 20px
+
+
+.contacts
+	.bg-holder
+		background-image: url('../img/contacts-bg.jpg')
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_02.png')
+			right: 0
+			//left: 0
+			bottom: -60px
+			transform: rotate(-9deg)
+	ul
+		padding-left: 20px	
+
+
+
+.owl-carousel .owl-stage-outer
+	padding-top: 3px
+	padding-bottom: 3px
+	.owl-item
+		opacity: 0.3
+	.owl-item.active
+		opacity: 1
+.owl-nav
+	display: flex
+	align-content: center
+	justify-content: space-between
+	position: absolute
+	width: 100%
+	left: 0
+	top: calc(50% - 20px)
+	padding: 0 15px
+
+	button
+		line-height: 1
+		span
+			background-color: #fff
+
+
+footer
+	padding: 15px 0
+	//border-top: 1px solid $accent
+	font-size: 18px
+	ul
+		padding: 0
+		margin: 0
+	p
+		margin-bottom: 0.2rem
+	.social-bottom
+		a
+			display: block
+			margin: 0
+	.icon
+		font-size: 24px
+
+@import "media" // Always at the end

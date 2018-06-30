@@ -1,0 +1,69 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+// ≥992px
++media-breakpoint-down(md)
+
+// ≥768px
++media-breakpoint-down(sm)
+	.welcome-section, .collections-section, .type-of-wood, .gallery-section, .about-product, .about-company, .special-offer
+		.bg-holder
+			background-image: none
+			background-color: $accent
+		.leaf-parent
+			&:after
+				display: none
+	.worldwide
+		.leaf-parent
+			&:after
+				display: none
+		.map-holder
+			margin-bottom: 0
+// ≥576px
++media-breakpoint-down(xs)
+	.load-intro
+		.sign-holder
+			width: 93%
+			&.wide-screen
+				width: 55%
+
+	article
+		margin-bottom: 15px
+	.collection
+		p
+			width: 100%
+			line-height: 1.2
+		.collection-card
+			width: 100%
+			height: 350px
+
+
+	footer
+		.social-bottom
+			.icon
+				font-size: 40px
+	.about-product
+		span
+			font-size: 3rem
+			display: inline-block
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
+	.owl-carousel .owl-stage-outer
+		overflow: visible
