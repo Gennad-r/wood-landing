@@ -62,7 +62,9 @@ h2
 	font-size: 1.5rem
 h4
 	font-size: 1.1rem
-	
+h5
+	font-size: 1rem
+	font-weight: bold
 
 p, li
 	font-size: 0.8rem
@@ -100,7 +102,19 @@ a.btn-wide
 .top-menu a
 	transition: color 0.3s
 
-
+.top-button
+	position: fixed
+	z-index: 99
+	right: 15px
+	bottom: -100px
+	color: $blue
+	font-size: 2rem
+	cursor: pointer
+	transition: 0.3s
+	&.visible
+		bottom: 15px
+		&:hover
+			bottom: 10px
 
 .load-intro
 	transition: opacity 2s
@@ -216,19 +230,19 @@ article
 			border-bottom: 3px solid #fff
 	.img-holder
 		width: 85%
-	.leaf-parent
-		position: relative
-		&:after
-			content: ''
-			display: block
-			position: absolute
-			width: 112px
-			height: 112px
-			background-repeat: no-repeat
-			background-size: cover
-			bottom: -60px
 	&:last-child
 		margin-bottom: 30px
+.leaf-parent
+	position: relative
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		width: 112px
+		height: 112px
+		background-repeat: no-repeat
+		background-size: cover
+		bottom: -60px
 	
 .welcome-section
 	.bg-holder
@@ -284,64 +298,64 @@ article
 		&:after
 			background-image: url('../img/leafes/leaf_02.png')
 			right: 0
-	span.wood-type-plates
-		display: flex
-		text-align: center
-		background-position: center center
-		background-size: cover
-		background-repeat: no-repeat
-		color: #fff
-		min-height: 70px
-		margin: 15px 0
-		align-items: center
-		justify-content: center
-		line-height: 1
-		font-size: 0.7rem	
+span.wood-type-plates
+	display: flex
+	text-align: center
+	background-position: center center
+	background-size: cover
+	background-repeat: no-repeat
+	color: #fff
+	min-height: 70px
+	margin: 15px 0
+	align-items: center
+	justify-content: center
+	line-height: 1
+	font-size: 0.7rem	
+	i
+		font-weight: normal
+		font-style: normal
+		text-shadow: 0 0 3px #000
+	&-ice
+		background-image: url('../img/wood-types/type-ice.jpg')
+	&-oak
+		background-image: url('../img/wood-types/type-oak.jpg')
+	&-oak-amber
+		background-image: url('../img/wood-types/type-oak-amber.jpg')
+	&-oak-cognac
+		background-image: url('../img/wood-types/type-oak-cognac.jpg')
+	&-oak-ebon
+		background-image: url('../img/wood-types/type-oak-ebon.jpg')
+	&-oak-white
+		background-image: url('../img/wood-types/type-oak-white.jpg')
+	&-oak-old-wood
+		background-image: url('../img/wood-types/type-oak-old-wood.jpg')
+	&-ash-emotion
+		background-image: url('../img/wood-types/type-ash-emotion.jpg')
+	&-ash-select
+		background-image: url('../img/wood-types/type-ash-select.jpg')
+	&-aide-giovane
+		background-image: url('../img/wood-types/type-aide-giovane.jpg')
+	&-nut
+		background-image: url('../img/wood-types/type-nut.jpg')
+	&-maple
+		background-image: url('../img/wood-types/type-maple.jpg')
+	&-oak-thermo
+		background-image: url('../img/wood-types/type-oak-thermo.jpg')
+	&-ash-thermo
+		background-image: url('../img/wood-types/type-ash-thermo.jpg')
+	&-wenge
+		background-image: url('../img/wood-types/type-wenge.jpg')
+	&-merbau
+		background-image: url('../img/wood-types/type-merbau.jpg')
+	&-teak
+		background-image: url('../img/wood-types/type-teak.jpg')
+	&-all
+		background-color: #fff
+		border: 1px solid $accent
+		color: $accent
 		i
-			font-weight: normal
-			font-style: normal
-			text-shadow: 0 0 3px #000
-		&-ice
-			background-image: url('../img/wood-types/type-ice.jpg')
-		&-oak
-			background-image: url('../img/wood-types/type-oak.jpg')
-		&-oak-amber
-			background-image: url('../img/wood-types/type-oak-amber.jpg')
-		&-oak-cognac
-			background-image: url('../img/wood-types/type-oak-cognac.jpg')
-		&-oak-ebon
-			background-image: url('../img/wood-types/type-oak-ebon.jpg')
-		&-oak-white
-			background-image: url('../img/wood-types/type-oak-white.jpg')
-		&-oak-old-wood
-			background-image: url('../img/wood-types/type-oak-old-wood.jpg')
-		&-ash-emotion
-			background-image: url('../img/wood-types/type-ash-emotion.jpg')
-		&-ash-select
-			background-image: url('../img/wood-types/type-ash-select.jpg')
-		&-aide-giovane
-			background-image: url('../img/wood-types/type-aide-giovane.jpg')
-		&-nut
-			background-image: url('../img/wood-types/type-nut.jpg')
-		&-maple
-			background-image: url('../img/wood-types/type-maple.jpg')
-		&-oak-thermo
-			background-image: url('../img/wood-types/type-oak-thermo.jpg')
-		&-ash-thermo
-			background-image: url('../img/wood-types/type-ash-thermo.jpg')
-		&-wenge
-			background-image: url('../img/wood-types/type-wenge.jpg')
-		&-merbau
-			background-image: url('../img/wood-types/type-merbau.jpg')
-		&-teak
-			background-image: url('../img/wood-types/type-teak.jpg')
-		&-all
-			background-color: #fff
-			border: 1px solid $accent
-			color: $accent
-			i
-				text-shadow: none
-				font-weight: bold
+			text-shadow: none
+			font-weight: bold
 
 
 .gallery-section
@@ -440,6 +454,93 @@ article
 			transform: rotate(-9deg)
 	ul
 		padding-left: 20px	
+
+.elegant-collection-main
+	.bg-holder
+		background-image: url('../img/elegant_collection-bg.jpg')
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_01.png')
+			right: 0	
+
+
+// collections pages
+.patterns
+	padding-bottom: 2rem
+	border-bottom: 1px solid $accent
+	margin-bottom: 100px
+	.leaf-parent
+		&:after
+			background-image: url('../img/leafes/leaf_02.png')
+			left: 0	
+			bottom: -100px
+			transform: rotate(20deg)
+
+.pattern
+	display: flex
+	margin-bottom: 1rem
+	h5
+		margin-bottom: 0.2rem
+	p
+		margin-bottom: 0.1rem
+	.icon
+		margin-right: 1rem
+		font-size: 2.5rem
+		display: inline-block
+
+.dimensions
+	border-bottom: 1px solid $accent
+	padding-bottom: 2rem
+	margin-bottom: 100px
+	.dim-img-holder
+		position: relative
+		margin-bottom: 0.3rem
+		margin: 0 auto 0.5rem
+		max-width: 175px
+		.dim-size
+			position: absolute
+			text-align: center
+			color: #fff
+			width: 100%
+			top: 50%
+			padding-left: 16%
+			text-shadow: 0 0 3px #000
+		img
+			margin: 0 auto
+	p
+		text-align: center
+		line-height: 1.2
+
+.wood-types
+	padding-bottom: 2rem
+	margin-bottom: 60px	
+
+.plates-card-holder
+	padding: 8px
+	background-color: #F2EDE7
+	img
+		margin-bottom: 20px
+
+
+.plates-section
+	padding-bottom: 2rem
+	border-bottom: 1px solid $accent
+	margin-bottom: 100px
+	.icon
+		font-size: 2rem
+	.btn-wide
+		background-color: $accent
+	.plate-description
+		display: flex
+		flex-direction: row
+		align-items: flex-start
+		justify-content: space-between
+	.plate-name
+		font-size: 1rem
+		margin-bottom: 0
+		line-height: 1
+	.plate-model
+		font-size: 0.8em
 
 
 
