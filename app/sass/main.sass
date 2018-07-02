@@ -69,7 +69,7 @@ h5
 p, li
 	font-size: 0.8rem
 	margin-bottom: calc(0.8rem * 1.65 / 2)
-a.btn-wide
+.btn-wide
 	display: block
 	color: #fff
 	font-size: 0.8rem
@@ -80,10 +80,12 @@ a.btn-wide
 		background-color: $hover
 		&:hover
 			background-color: darken($hover, 10%)
+			color: #fff
 	&.brown
 		background-color: lighten($accent, 10%)
 		&:hover
 			background-color: $accent
+			color: #fff
 
 .form-holder
 	margin-bottom: calc(0.8rem * 1.65 / 2)
@@ -111,6 +113,8 @@ a.btn-wide
 	font-size: 2rem
 	cursor: pointer
 	transition: 0.3s
+	.icon
+		display: block
 	&.visible
 		bottom: 15px
 		&:hover
@@ -212,6 +216,7 @@ article
 		color: #fff
 	.article-content
 		background-color: #fff
+		min-height: 350px
 	.bg-holder
 		position: relative
 		background-repeat: no-repeat
@@ -483,6 +488,7 @@ span.wood-type-plates
 		margin-bottom: 0.2rem
 	p
 		margin-bottom: 0.1rem
+		line-height: 1.4
 	.icon
 		margin-right: 1rem
 		font-size: 2.5rem
@@ -526,6 +532,32 @@ span.wood-type-plates
 	padding-bottom: 2rem
 	border-bottom: 1px solid $accent
 	margin-bottom: 100px
+	.plates-card-holder:hover
+		.plate-link
+			visibility: visible
+			opacity: 1
+	.plate-img
+		position: relative
+	.plate-link
+		visibility: hidden
+		opacity: 0
+		position: absolute
+		display: flex
+		justify-content: center
+		align-items: center
+		background-color: rgba(#000, 0.7)
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0	
+		transition: opacity 0.5s ease-in
+		.btn-wide
+			background-color: transparent
+			border: 2px solid #fff
+			flex-basis: 50%
+			&:hover
+				color: #fff
+				background-color: rgba(#fff, 0.3)
 	.icon
 		font-size: 2rem
 	.btn-wide
@@ -543,6 +575,61 @@ span.wood-type-plates
 		font-size: 0.8em
 
 
+// plate page
+
+.item-page
+	padding: 30px 0
+	border-top: 1px solid $accent
+	border-bottom: 1px solid $accent
+	&-wrapper
+		background-color: #F2F2F2
+		padding-top: 15px
+		padding-bottom: 15px
+	&-img
+		background-color: #fff
+		padding: 10px
+		margin-bottom: 0.3rem
+	h2
+		margin-bottom: 0
+	h3
+		font-size: 1.1rem
+		margin-bottom: 0
+	dl
+		font-size: 0.8rem
+	&-price
+		text-align: center
+		padding: 0.5rem 0
+		background-color: $accent
+		color: #fff
+	&-note
+		font-size: 0.8rem
+		font-style: italic
+		padding-bottom: 1rem
+	&-fca
+		border-top: 1px solid $accent
+		padding-top: 1rem
+		font-style: italic
+	&-buttons-section
+		margin-top: 1rem
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		.back
+			display: block
+			margin-top: 0.1rem
+			line-height: 1
+			font-size: 2.2rem
+			color: $blue
+	.plate-properties
+		padding: 0 10px
+		.icon
+			font-size: 2rem
+
+
+
+
+
+// slider
 
 .owl-carousel .owl-stage-outer
 	padding-top: 3px
@@ -565,6 +652,11 @@ span.wood-type-plates
 		line-height: 1
 		span
 			background-color: #fff
+
+
+
+
+
 
 
 footer

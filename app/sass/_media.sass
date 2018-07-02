@@ -15,7 +15,7 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
-	.welcome-section, .collections-section, .type-of-wood, .gallery-section, .about-product, .about-company, .special-offer, .elegant-collection-main
+	.welcome-section, .collections-section, .type-of-wood, .gallery-section, .about-product, .about-company, .special-offer, .elegant-collection-main, .patterns
 		.bg-holder
 			background-image: none
 			background-color: $accent
@@ -28,7 +28,11 @@
 				display: none
 		.map-holder
 			margin-bottom: 0
-
+	
+	.plates-section
+		.plate-holder
+			flex-basis: 350px
+			margin: 0 auto
 
 // ≥576px
 +media-breakpoint-down(xs)
