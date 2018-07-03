@@ -15,17 +15,13 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
-	.welcome-section, .collections-section, .type-of-wood, .gallery-section, .about-product, .about-company, .special-offer, .elegant-collection-main, .patterns
+	.welcome-section, .collections-section, .gallery-section, .about-product, .about-company, .special-offer, .elegant-collection-main, .patterns
 		.bg-holder
 			background-image: none
 			background-color: $accent
-		.leaf-parent
-			&:after
-				display: none
+
 	.worldwide
-		.leaf-parent
-			&:after
-				display: none
+
 		.map-holder
 			margin-bottom: 0
 	
@@ -75,5 +71,5 @@
 
 // ≤1200px
 +media-breakpoint-up(xl)
-	.owl-carousel .owl-stage-outer
+	.owl-carousel.main-gallery .owl-stage-outer
 		overflow: visible

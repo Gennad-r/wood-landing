@@ -52,8 +52,8 @@ $(function() {
 
 	//owl
 
-	if($('.owl-carousel').length){
-		$(".owl-carousel").owlCarousel({
+	if($('.main-gallery').length){
+		$(".owl-carousel.main-gallery").owlCarousel({
 			items: 1,
 			loop: true,
 			center: true,
@@ -63,7 +63,7 @@ $(function() {
 		});
 	}
 
-
+	
 
 
 	if($('.load-intro').length){
@@ -78,7 +78,7 @@ $(function() {
 			sessionStorage.setItem('intro', true);
 		}
 
-		if($('#draw-text') && (sessionStorage.intro == 'true')){
+		if($('#draw-text').length && (sessionStorage.intro == 'true')){
 			$('.load-intro').css({
 				'opacity': 1,
 				'top': 0
@@ -93,16 +93,7 @@ $(function() {
 		} else {
 			$('.load-intro').css('display', 'none')
 		}
-		if ($("#wood-type-text-draw")) {
-			new Vivus('wood-type-text-draw', {
-				duration: 300,
-				file: 'img/sections-text/wood-type.svg',
-				onReady: function (myVivus) {
-					myVivus.el.setAttribute('height', '100%');
-				}
-			})
-		}
-		if ($("#about-product-text")) {
+		if ($("#about-product-text").length) {
 			new Vivus('about-product-text', {
 				duration: 300,
 				file: 'img/sections-text/about-product.svg',
