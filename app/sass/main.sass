@@ -27,6 +27,22 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+.tooltip
+	.tooltip-inner
+		background-color: $accent
+	&.bs-tooltip-top	
+		.arrow:before
+			border-top-color: $accent
+	&.bs-tooltip-bottom	
+		.arrow:before
+			border-bottom-color: $accent
+	&.bs-tooltip-left	
+		.arrow:before
+			border-left-color: $accent
+	&.bs-tooltip-right	
+		.arrow:before
+			border-right-color: $accent
+
 .container-wood
 	min-height: 100%
 	display: flex
@@ -74,7 +90,7 @@ p, li
 	color: #fff
 	font-size: 0.8rem
 	text-align: center
-	padding: 0.5rem
+	padding: 0.5rem 1rem
 	transition: background-color 0.5s
 	&.green
 		background-color: $hover
@@ -86,6 +102,31 @@ p, li
 		&:hover
 			background-color: $accent
 			color: #fff
+button.btn-wide
+	width: 100%
+#load-more
+	width: auto
+
+button
+	cursor: pointer
+	outline: none !important
+	border: none !important
+	box-shadow: none !important
+	&:hover, &:focus, &:active
+		outline: none !important
+		border: none !important
+		box-shadow: none !important
+button[disabled]
+	opacity: 0.5
+	cursor: auto
+	&.btn-wide.brown:hover
+		background-color: $accent
+	&.btn-wide.green:hover
+		background-color: $hover
+
+
+.form-control, label, .custom-select
+	font-size: 0.8rem
 
 .form-holder
 	margin-bottom: calc(0.8rem * 1.65 / 2)
@@ -239,44 +280,37 @@ article
 		margin-bottom: 30px
 
 	
-.welcome-section
-	.bg-holder
-		background-image: url('../img/welcome-bg.jpg')
-
-
-.collections-section
-	.bg-holder
-		background-image: url('../img/collections-bg.jpg')
 
 	
 .collection
-	color: #fff
+	color: $accent
 	.collection-name
 		font-size: 50px
 		line-height: 1.1
 	a.btn
-		color: #fff
+		color: $accent
 		font-size: 1.2rem
-		border: 2px solid #fff
+		border: 2px solid $accent
 		&:hover
-			background-color: rgba(#fff, 0.8)
+			background-color: rgba(#fff, 1)
 			color: $accent
+	h3
+		color: #fff
+		text-align: center
+		text-shadow: 0 0 2px #000, 0 0 1px #000
 	p
 		width: 350px
+		color: #fff
 		line-height: 1.2
-	.collection-card
+		text-shadow: 0 0 2px #000, 0 0 1px #000
+	&-card
 		width: 350px
-		height: 350px
-		background-position: center center
-		background-repeat: no-repeat
-		background-size: cover
-		border: 7px solid #fff
-		text-align: center
-		padding: 1.5rem
-		&-elegance
-			background-image: url('../img/elegant-collection-main.jpg')
-		&-3d
-			background-image: url('../img/3d-collection-main.jpg')
+		display: flex
+		flex-direction: column
+		margin: 0 auto
+		.btn-wide
+			align-self: center
+
 
 span.wood-type-plates
 	display: flex
@@ -342,20 +376,15 @@ span.wood-type-plates
 	overflow: hidden
 	padding-bottom: 50px
 	margin-bottom: 50px
-
+	.article-content
+		min-height: auto
 
 
 .about-product
-	.bg-holder
-		background-image: url('../img/about-product-bg.jpg')
-
+	
 	span
 		font-size: 3rem
 		display: inline-block
-
-.about-company
-	.bg-holder
-		background-image: url('../img/about-company-bg.jpg')
 
 
 .worldwide
@@ -390,18 +419,12 @@ span.wood-type-plates
 
 	ul
 		padding-left: 20px
+		li:first-child
+			margin-top: 0.5rem
 
 
-.contacts
-	.bg-holder
-		background-image: url('../img/contacts-bg.jpg')
 
-	ul
-		padding-left: 20px	
-
-.elegant-collection-main
-	.bg-holder
-		background-image: url('../img/elegant_collection-bg.jpg')
+		
 
 
 // collections pages
@@ -455,19 +478,18 @@ span.wood-type-plates
 	padding: 8px
 	background-color: #F2EDE7
 	img
-		margin-bottom: 20px
+		//margin-bottom: 20px
 
 
 .plates-section
 	padding-bottom: 2rem
 	border-bottom: 1px solid $accent
 	margin-bottom: 100px
-	.plates-card-holder:hover
+	.plate-img:hover
+		position: relative
 		.plate-link
 			visibility: visible
 			opacity: 1
-	.plate-img
-		position: relative
 	.plate-link
 		visibility: hidden
 		opacity: 0
@@ -492,10 +514,11 @@ span.wood-type-plates
 		font-size: 2rem
 	.btn-wide
 		background-color: $accent
+		margin-bottom: 0.4rem
 	.plate-description
 		display: flex
-		flex-direction: row
-		align-items: flex-start
+		flex-direction: column
+		align-items: stretch
 		justify-content: space-between
 	.plate-name
 		font-size: 1rem
@@ -586,7 +609,45 @@ span.wood-type-plates
 
 
 
+// loading spinner
 
+.lds-ring 
+  display: inline-block
+  margin-right: 0.5rem
+  position: relative
+  width: 0.8rem
+  height: 0.8rem
+
+.lds-ring div 
+  box-sizing: border-box
+  display: block
+  position: absolute
+  width: 0.7rem
+  height: 0.7rem
+  margin: 0.2rem
+  border: 0.1rem solid #fff
+  border-radius: 50%
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+  border-color: #fff transparent transparent transparent
+
+.lds-ring div:nth-child(1) 
+  animation-delay: -0.45s
+
+.lds-ring div:nth-child(2) 
+  animation-delay: -0.3s
+
+.lds-ring div:nth-child(3) 
+  animation-delay: -0.15s
+
+@keyframes lds-ring 
+  0% 
+    transform: rotate(0deg)
+  
+  100% 
+    transform: rotate(360deg)
+  
+.single-page h1
+	color: $accent
 
 
 footer
@@ -596,6 +657,9 @@ footer
 	ul
 		padding: 0
 		margin: 0
+		&.navigation
+			li
+				margin: 0
 	p
 		margin-bottom: 0.2rem
 	.social-bottom

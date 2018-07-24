@@ -120,11 +120,61 @@
 						</div>
 						<div class="col-12 item-page-buttons-section">
 							<a href="elegant-collection.html" class="back"><span class="icon icon-arrow-left"></span></a>
-							<a href="#" class="btn-wide green">Contact our manager</a>
+							<button id='get-plate' class="btn-wide green">Contact our manager</button>
 						</div>
 					</div>
 				</div>				
 			</article>
+
+	<div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Contact our manager</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form>
+					<div class="modal-body">
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<input type="text" name='Name' class="form-control" placeholder="Full Name *" required>
+								<input type="hidden" name="project_name" value="Booking">
+								<input type="hidden" name='Country' value="">
+								<input type="hidden" name='Software' value="">
+								<input type="hidden" name="From page" value="">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="text" name='Company' class="form-control" placeholder="Company">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="text" name='Adress' class="form-control" placeholder="Adress">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="email" name='Email' class="form-control" placeholder="Email *">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="text" name='Phone' class="form-control" placeholder="Phone">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="text" name='Email' class="form-control" placeholder="Type of business">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-12">
+								<label for="info-message">Message:</label>
+								<textarea id="info-message" class="form-control"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn-wide brown">Send</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
 
 
