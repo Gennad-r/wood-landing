@@ -141,7 +141,10 @@
 								</div>
 							</div>
 							<div class="map-holder col-12 pt-3">
-								<img src="<?php the_field('worldwide_map') ?>" alt="map" class="img-responsive">
+								<img src="<?php the_field('worldwide_map') ?>" alt="map" class="img-responsive" usemap="#image-map">
+								<map name="image-map">
+								    <area target="_blank" alt="WIKI" title="WIKI" href="https://en.wikipedia.org/wiki/Okhtyrka" coords="575,85,35" shape="circle">
+								</map>
 							</div>
 							<div class="col-md-6">
 								<?php the_field('worldwide_content') ?>
